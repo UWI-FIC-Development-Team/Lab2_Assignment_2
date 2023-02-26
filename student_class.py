@@ -1,4 +1,4 @@
-from ranges_list import range_lst
+from ranges_list import range_lst, creditlist, qplist
 
 class Student:
         def __init__(self, id='', lname='', fname='',
@@ -16,9 +16,12 @@ class Student:
                 return self.courses
         
         def get_fname(self): return self.fname
+        
         def get_lname(self): return self.lname
+        
         def get_ccode(self): 
                 return [i[0] for i in self.courses]
+        
         def get_grades(self): 
                 return [i[1] for i in self.courses]
         
@@ -35,6 +38,7 @@ class Student:
                 ccode_list = [i[0] for i in self.courses]
                 grade_list = self.my_map(self.compute_letter_grade, self.courses)
                 return list(zip(ccode_list, grade_list))
+        
                           
         
 std = Student(lst_of_courses_with_grades=[ ('COMP1210' , 80) , ('COMP1215' , 60) ,
