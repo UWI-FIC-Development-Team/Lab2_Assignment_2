@@ -38,15 +38,13 @@ def convert_to_wtqp(std_lst):
         qp = [qplist[j[1]] for j in std_lst if j[1] in qplist ]
         return list(zip(credits, qp))
 
-# calc the grade_point average: for each course
-# calc the gpa by added the total gpa to the total hrs of that course
-
 def calc_gpa(std_lst):
         total_grade_point = [sum(map(lambda x: (x[0] * x[1] ), 
                                      convert_to_wtqp(std_lst)))]
         total_credit_hrs = [sum(map(lambda x: x[0], 
                                     convert_to_wtqp(std_lst)))]
-        return round((total_grade_point[0]/total_credit_hrs[0]), 2)
+        gpa = total_grade_point[0]/total_credit_hrs[0]
+        return f"{gpa:.2f}"
 
 def main():
         lst = [ ('COMP1215' , 'B-') , ('FOUN2003' , 'A')]
