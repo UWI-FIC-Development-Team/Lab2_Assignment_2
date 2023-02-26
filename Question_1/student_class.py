@@ -52,11 +52,6 @@ class Student:
                 gpa = total_grade_point[0]/total_credit_hrs[0]
                 return f"{gpa:.2f}"
                           
-        
-std = Student(lst_of_courses_with_grades=[ ('COMP1210' , 80) , ('COMP1215' , 60) ,
-('COMP2210' , 50) , ('COMP1205' , 60) , ('FOUN2003' , 85) , ('COMP2220' , 80) ])
-
-print(std.calc_gpa())
 
                 
         
