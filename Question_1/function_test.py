@@ -18,7 +18,7 @@ qplist = {
 
 
        
-def compute_letter_grade( grade):
+def compute_letter_grade(grade):
                 letter_grade = [lst[1] for lst in range_lst 
                                 if grade in lst[0] ]
                 return letter_grade[0]
@@ -48,6 +48,15 @@ def calc_gpa(std_lst):
 
 def main():
         lst = [ ('COMP1215' , 'B-') , ('FOUN2003' , 'A')]
+        calc_letter_grade(lst)
         print(calc_gpa(lst))
         
 main()
+
+# courses = [ ('COMP1215' , 90) , ('FOUN2003' , 100)]
+
+# lst = []
+# for x in courses:
+#     a,b = x
+#     lst.append(b)
+# print(lst)
