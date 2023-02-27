@@ -1,4 +1,5 @@
-import pprint
+from tabulate import tabulate
+
 def print_txt(file):
     lines = 1
     dict = {}
@@ -11,7 +12,10 @@ def print_txt(file):
                 dict[j.rstrip('.')] = [lines]
         lines += 1
 
-    print(sorted(list(map(lambda x: x, dict.items()))))
+    p = sorted(list(map(lambda x: x, dict.items())))
+    max_word_len = max(len(word) for word, _ in p)
+    for word, lines in p:
+        print(f'{word:<{max_word_len}} | {", ".join(str(line) for line in lines)}')
         
         
 
